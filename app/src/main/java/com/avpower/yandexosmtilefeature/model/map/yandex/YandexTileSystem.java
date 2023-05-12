@@ -1,4 +1,4 @@
-package com.avpower.yandexosmtilefeature.model;
+package com.avpower.yandexosmtilefeature.model.map.yandex;
 
 import org.osgeo.proj4j.CRSFactory;
 import org.osgeo.proj4j.CoordinateReferenceSystem;

@@ -1,4 +1,4 @@
-package com.avpower.yandexosmtilefeature.model;
+package com.avpower.yandexosmtilefeature.model.map.yandex;
 
 /*тестовый провайдер для яндекса*/
 class YandexTileProvider(

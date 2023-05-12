@@ -28,7 +28,7 @@ android {
 }
 
 dependencies {
-// Osmdroid & Maps
+    // Osmdroid & Maps
     def osmdroid_version = '6.1.14'
     implementation "org.osmdroid:osmdroid-android:$osmdroid_version"
     implementation "org.osmdroid:osmdroid-wms:$osmdroid_version"
@@ -37,6 +37,19 @@ dependencies {
     implementation 'org.osmdroid:osmdroid-wms:6.1.14'
     api 'mil.nga.mgrs:mgrs-android:2.2.2'
     implementation 'org.osmdroid:osmdroid-geopackage:6.1.14'
+    //mapsforge
+    implementation 'org.mapsforge:mapsforge-core:0.18.0'
+    implementation 'org.mapsforge:mapsforge-map:0.18.0'
+    implementation 'org.mapsforge:mapsforge-map-reader:0.18.0'
+    implementation 'org.mapsforge:mapsforge-themes:0.18.0'
+    implementation 'net.sf.kxml:kxml2:2.3.0'
+    implementation 'org.mapsforge:mapsforge-map-android:0.18.0'
+    implementation 'com.caverock:androidsvg:1.4'
+
+
+    // Hilt
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-compiler:$hilt_version"
 
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.9.0'

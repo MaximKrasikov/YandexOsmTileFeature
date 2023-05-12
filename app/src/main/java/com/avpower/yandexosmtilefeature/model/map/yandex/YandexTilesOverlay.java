@@ -1,4 +1,4 @@
-package com.avpower.yandexosmtilefeature.model;
+package com.avpower.yandexosmtilefeature.model.map.yandex;
 
 import android.graphics.Point;
 
@@ -11,17 +11,10 @@ import org.osmdroid.views.Projection;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
-import android.graphics.Point;
-import android.graphics.PointF;
 import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
 
 import org.osmdroid.tileprovider.MapTileProviderBase;
-import org.osmdroid.util.BoundingBox;
 import org.osmdroid.util.GeoPoint;
-import org.osmdroid.util.MapTileIndex;
-import org.osmdroid.views.MapView;
-import org.osmdroid.views.Projection;
 import org.osmdroid.views.overlay.TilesOverlay;
 
 
