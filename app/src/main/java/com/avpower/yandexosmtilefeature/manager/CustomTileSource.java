@@ -183,21 +183,37 @@ class CustomTileSource {
         //http://mt.google.com/vt/lyrs=h@169000000&hl=ru
         //http://mt.google.com/vt/lyrs=m&hl=ru&x=%s&y=%s&z=%s&s=Galileo
 
+        //google gibtid hd
+        //http://mt{s}.google.com/vt/lyrs=y@176103410&x={x}&y={y}&z={z}&s=Galileo&scale=1&hl=ru
+
+        //header
+        //Referer:https://www.google.com/maps/
+        //Connection: keep-alive
+        //User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36
+        //Accept: image/webp,image/apng,image/*,*/*;q=0.8
+        //Accept-Encoding: gzip, deflate
+        //Accept-Language: ru,en-US;q=0.9,en;q=0.8
+
         private val GOOGLE = object : XYTileSource(
-                "Google-Gibrid",
+                "Google",
                 0,
-                18,
+                23,
                 256,
                 ".png",
                 arrayOf(
-                        "http://mt.google.com/vt/lyrs=m&hl=ru&x=%s&y=%s&z=%s&s=Galileo"
+                        "https://mt.google.com/vt/lyrs=y@176103410&x={x}&y={y}&z={z}&s=Galileo&scale=1&hl=ru"
                 ),
                 ) {
             override fun getTileURLString(pMapTileIndex: Long): String {
-                return baseUrl + (MapTileIndex.getX(pMapTileIndex)
-                        .toString() + "/" + MapTileIndex.getY(pMapTileIndex)
+                val x = MapTileIndex.getX(pMapTileIndex)
+                val y = MapTileIndex.getY(pMapTileIndex)
+                val zoom = MapTileIndex.getZoom(pMapTileIndex)
+
+                return baseUrl.replace("{z}", "$zoom").replace("{x}", "$x").replace("{y}", "$y")
+                /*return baseUrl + (MapTileIndex.getX(pMapTileIndex)
+                    .toString() + "/" + MapTileIndex.getY(pMapTileIndex)
                         + "/" + MapTileIndex.getZoom(pMapTileIndex)
-                        + mImageFilenameEnding)
+                        + mImageFilenameEnding)*/
             }
         }
 
