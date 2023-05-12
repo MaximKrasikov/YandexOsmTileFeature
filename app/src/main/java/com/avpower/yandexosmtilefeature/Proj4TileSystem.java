@@ -2,6 +2,10 @@ package com.avpower.yandexosmtilefeature;
 
 import org.osmdroid.util.BoundingBox;
 
+//osmdroid only uses EPSG:3857
+//I need (EPSG:3395) for yandex
+// transform 3395 to 3857
+//https://github.com/janekp/osmdroid/blob/example/%23971/app/src/main/java/org/osmdroid/tilesystemdemo/Proj4TileSystem.java#L37
 public class Proj4TileSystem extends TileSystem {
 
     public static final Proj4TileSystem MAAAMET;
