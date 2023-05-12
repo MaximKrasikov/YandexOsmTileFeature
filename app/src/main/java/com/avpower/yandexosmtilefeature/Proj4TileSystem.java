@@ -1,9 +1,12 @@
 package com.avpower.yandexosmtilefeature;
 
+import org.osmdroid.util.BoundingBox;
+
 public class Proj4TileSystem extends TileSystem {
 
     public static final Proj4TileSystem MAAAMET;
     public static final Proj4TileSystem MERCATOR;
+    public static final Proj4TileSystem YANDEX;
 
     private static final CoordinateTransformFactory CT_FACTORY;
     private static final CRSFactory CRS_FACTORY;
@@ -20,6 +23,17 @@ public class Proj4TileSystem extends TileSystem {
                 "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs",
                 new BoundingBox(85.05112877980659, 180, -85.05112877980659, -180),
                 new RectF(-20037508, -20037508, 20037508, 20037508));
+        //Projected bounds:
+        //-20037508.34 -15496570.74
+        //20037508.34 18764656.23
+        //WGS84 bounds:
+        //-180.0 -80.0
+        //180.0 84.0
+        YANDEX = new Proj4TileSystem(
+                "EPSG:3395",
+                "+proj=merc +lon_0=0 +k=1 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs",
+                new BoundingBox(85.05112877980659, 180, -85.05112877980659, -180),
+                new RectF(-20037508, -20037508, 20037508, 20037508 ));
         MAAAMET = new Proj4TileSystem(
                 "EPSG:3301",
                 "+proj=lcc +lat_1=59.33333333333334 +lat_2=58 +lat_0=57.51755393055556 +lon_0=24 +x_0=500000 +y_0=6375000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs",
